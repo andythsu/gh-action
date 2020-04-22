@@ -20,4 +20,4 @@ jobs:
           echo "::set-env name=VERSION::50"
       - name: get env
         run: |
-          echo ${{ env.VERSION }}
+          echo $env:VERSION
