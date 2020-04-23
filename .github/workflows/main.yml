@@ -18,8 +18,8 @@ jobs:
       - name: set env 
         run: |
           echo "::set-env name=VERSION::50"
-      - run: |
-          echo "::set-env name=TEST::$env:VERSION"
       - name: get env
+        env: 
+          test: ${{env.VERSION}}
         run: |
-          echo $env:TEST
+          echo $env:test
