@@ -23,3 +23,6 @@ jobs:
           test: ${{env.VERSION}}
         run: |
           echo $env:test
+      - name: get env 2
+        run: |
+          echo $env:test
