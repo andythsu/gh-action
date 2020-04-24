@@ -11,18 +11,14 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: set env 
         run: |
-          echo "::set-env name=VERSION::50"
+          echo "::set-env name=VERSION::${{ env.GITHUB_RUN_NUMBER }}"
       - name: get env
-        env: 
-          test: ${{env.VERSION}}
+        shell: pwsh
         run: |
-          echo $env:test
-      - name: get env 2
-        run: |
-          echo $env:test
+          echo $env:VERSION
